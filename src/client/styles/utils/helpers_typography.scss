@@ -1,0 +1,59 @@
+:global(.text-font-primary) {
+    font-family: $font-primary;
+}
+
+:global(.text-font-title) {
+    font-family: $font-title;
+}
+
+:global(.text-font-serif) {
+    font-family: $font-serif;
+}
+
+:global(.text-font-monospace) {
+    font-family: $font-monospace;
+}
+
+:global(.text-xs) {
+    font-size: $text-xs;
+}
+
+:global(.text-sm) {
+    font-size: $text-sm;
+}
+
+:global(.text-md) {
+    font-size: $text-md;
+}
+
+:global(.text-lg) {
+    font-size: $text-lg;
+}
+
+:global(.text-xl) {
+    font-size: $text-xl;
+}
+
+:global(.text-xxl) {
+    font-size: $text-xxl;
+}
+
+:global(.text-xxxl) {
+    font-size: $text-xxxl;
+}
+
+:global(.text-center) {
+    text-align: center;
+}
+
+:global(.text-right) {
+    text-align: right;
+}
+
+:global(.text-left) {
+    text-align: left;
+}
+
+:global(.text-bold) {
+    font-weight: 500;
+}

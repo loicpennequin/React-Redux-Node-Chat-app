@@ -1,0 +1,22 @@
+{
+    presets: ['next/babel'],
+    plugins: [
+        '@babel/plugin-proposal-optional-chaining',
+        [
+            'react-css-modules',
+            {
+                webpackHotModuleReloading: true,
+                generateScopedName: '[folder]__[local]',
+                handleMissingStyleName: 'warn',
+                filetypes: {
+                    '.scss': {
+                        syntax: 'postcss-scss'
+                    },
+                    '.sass': {
+                        syntax: 'postcss-sass'
+                    }
+                }
+            }
+        ]
+    ]
+}

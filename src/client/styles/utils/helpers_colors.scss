@@ -1,0 +1,9 @@
+@each $key, $value in $derived-colors {
+    :global(.text-#{$key}) {
+        color: #{$value};
+    }
+    :global(.bg-#{$key}) {
+        background-color: #{$value};
+        color: findColorInvert($value);
+    }
+}

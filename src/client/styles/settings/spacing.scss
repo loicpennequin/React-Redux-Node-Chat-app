@@ -1,0 +1,31 @@
+$spacing-unit: var(--spacing-unit);
+$fixed-spacing-unit: var(--fixed-spacing-unit);
+
+$spacing-xxs: calc(0.25 * #{$spacing-unit});
+$spacing-xs: calc(0.5 * #{$spacing-unit});
+$spacing-sm: calc(0.75 * #{$spacing-unit});
+$spacing-md: calc(1.25 * #{$spacing-unit});
+$spacing-lg: calc(2 * #{$spacing-unit});
+$spacing-xl: calc(3.25 * #{$spacing-unit});
+$spacing-xxl: calc(5.25 * #{$spacing-unit});
+$spacing-xxxl: calc(8.5 * #{$spacing-unit});
+
+$fixed-spacing-xxs: calc(0.25 * #{$fixed-spacing-unit});
+$fixed-spacing-xs: calc(0.5 * #{$fixed-spacing-unit});
+$fixed-spacing-sm: calc(0.75 * #{$fixed-spacing-unit});
+$fixed-spacing-md: calc(1.25 * #{$fixed-spacing-unit});
+$fixed-spacing-lg: calc(2 * #{$fixed-spacing-unit});
+$fixed-spacing-xl: calc(3.25 * #{$fixed-spacing-unit});
+$fixed-spacing-xxl: calc(5.25 * #{$fixed-spacing-unit});
+$fixed-spacing-xxxl: calc(8.5 * #{$fixed-spacing-unit});
+
+$spacings: (
+    xxs: $spacing-xxs,
+    xs: $spacing-xs,
+    sm: $spacing-sm,
+    md: $spacing-md,
+    lg: $spacing-lg,
+    xl: $spacing-xl,
+    xxl: $spacing-xxl,
+    xxxl: $spacing-xxxl
+);

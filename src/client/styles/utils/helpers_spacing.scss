@@ -1,0 +1,33 @@
+@each $key, $value in $spacings {
+    :global(.m-#{$key}) {
+        margin: #{$value};
+    }
+    :global(.m-top-#{$key}) {
+        margin-top: #{$value};
+    }
+    :global(.m-bottom-#{$key}) {
+        margin-bottom: #{$value};
+    }
+    :global(.m-left-#{$key}) {
+        margin-left: #{$value};
+    }
+    :global(.m-right-#{$key}) {
+        margin-right: #{$value};
+    }
+
+    :global(.p-#{$key}) {
+        padding: #{$value};
+    }
+    :global(.p-top-#{$key}) {
+        padding-top: #{$value};
+    }
+    :global(.p-bottom-#{$key}) {
+        padding-bottom: #{$value};
+    }
+    :global(.p-left-#{$key}) {
+        padding-left: #{$value};
+    }
+    :global(.p-right-#{$key}) {
+        padding-right: #{$value};
+    }
+}

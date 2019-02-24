@@ -1,0 +1,26 @@
+$z-index-content: 1;
+$z-index-sidebar: 2;
+$z-index-dropdown: 3;
+$z-index-navbar: 4;
+$z-index-modal: 5;
+
+$breakpoint-mobile: 580px;
+$breakpoint-tablet-min: 581px;
+$breakpoint-tablet-max: 979px;
+$breakpoint-desktop-min: 980px;
+$breakpoint-desktop-max: 1439px;
+$breakpoint-hd: 1440px;
+
+$content-block-max-width: 980px;
+$content-block-max-width-hd: 1400px;
+$text-block-max-width: 70ch;
+
+$box-shadow-1: 0 2px 4px rgba(0, 0, 0, 0.22);
+$box-shadow-2: 0 4px 8px rgba(0, 0, 0, 0.32);
+
+$border-radius-1: 5px;
+$border-radius-2: 8px;
+$border-radius-3: 12px;
+$border-radius-round: 50%;
+
+$navbar-height: 55px;

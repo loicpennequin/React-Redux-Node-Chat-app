@@ -1,0 +1,33 @@
+@import 'settings/all';
+@import 'mixins/all';
+@import 'utils/all';
+
+:root {
+    --text-scale-ratio: 1.2;
+    --spacing-unit: 1em;
+    --fixed-spacing-unit: 1rem;
+    --font-primary: #{$font-primary};
+    --font-title: #{$font-title};
+    --font-serif: #{$font-serif};
+    --font-monospace: #{$font-monospace};
+    --text-scale-ratio: #{$text-scale-ratio};
+    --text-scale-ratio-mobile: #{$text-scale-ratio};
+}
+
+:global(#__next) {
+    font-size: $text-base-size;
+    font-family: $font-primary;
+    line-height: $base-line-height;
+    color: var(--color-text);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+a {
+    color: $color-link;
+    &:hover {
+        color: $color-link-hovered;
+    }
+    // &:visited
+    // color: $color-link-visited
+}

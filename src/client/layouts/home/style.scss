@@ -1,0 +1,67 @@
+@import '~sass';
+
+.background {
+    background: radial-gradient(
+            circle at top right,
+            $color-clear,
+            $color-primary-half 25%,
+            $color-clear 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            $color-clear,
+            $color-primary-dark 25%,
+            $color-clear 35%
+        ),
+        linear-gradient($color-primary, $color-secondary);
+    background-blend-mode: color-dodge, overlay, normal;
+}
+.intro {
+    max-width: 500px;
+    color: $color-white;
+    font-size: $text-md;
+}
+.img {
+    padding: $spacing-md;
+    width: 80%;
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    transition: all 0.5s;
+    svg {
+        fill: $color-white;
+        mask-image: linear-gradient(black, black 33%, transparent);
+    }
+    &.blurred {
+        filter: blur(5px);
+        transform: scale(0.9);
+    }
+}
+.register-form_wrapper {
+    position: relative;
+    height: 100%;
+    perspective: 500px;
+}
+:global(.register-form) {
+    transition: all 0.5s;
+    flex-basis: 50%;
+    position: relative;
+    z-index: 2;
+    &-enter {
+        opacity: 0;
+        transform: rotateX(45deg);
+    }
+    &-enter-active {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+    &-exit {
+        transition: all 0.5s;
+        transform: none;
+        opacity: 1;
+    }
+    &-exit-active {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+}

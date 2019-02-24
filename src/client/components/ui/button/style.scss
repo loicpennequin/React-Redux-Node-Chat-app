@@ -1,0 +1,55 @@
+@import '~sass';
+
+%button {
+    padding: $spacing-sm $spacing-md;
+    cursor: pointer;
+    border: solid 1px $color-clear;
+    text-transform: uppercase;
+    border-radius: $border-radius-1;
+    font-weight: bold;
+    box-shadow: $box-shadow-1;
+    transition: background-color 0.15s, box-shadow 0.3s;
+}
+
+.button {
+    @extend %button;
+}
+
+@each $key, $value in $derived-colors {
+    .button-#{$key} {
+        @extend %button;
+        background-color: #{$value};
+        color: findColorInvert($value);
+        &:hover,
+        &:active {
+            background-color: darken($value, 10%);
+        }
+        &:active {
+            box-shadow: $box-shadow-2;
+        }
+        &:focus {
+            outline: none;
+            background-color: darken($value, 10%);
+            box-shadow: $box-shadow-2;
+        }
+    }
+    .button-#{$key}--outlined {
+        @extend %button;
+        border-color: #{$value};
+        color: #{$value};
+        background-color: $color-clear;
+        &:hover,
+        &:active {
+            background-color: $value;
+            color: findColorInvert($value);
+        }
+        &:active {
+            box-shadow: $box-shadow-2;
+        }
+        &:focus {
+            outline: none;
+            background-color: $value;
+            box-shadow: $box-shadow-2;
+        }
+    }
+}

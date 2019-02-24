@@ -1,0 +1,12 @@
+:global(.height100) {
+    height: 100%;
+}
+
+:global(.centered) {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+:global(.relative) {
+    position: relative;
+}

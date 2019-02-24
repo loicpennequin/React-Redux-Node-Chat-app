@@ -1,0 +1,24 @@
+@import '~sass';
+
+%layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: $navbar-height 1fr;
+}
+
+.layout {
+    @extend %layout;
+}
+
+.layout--authenticated {
+    @extend %layout;
+    grid-template-columns: 200px 1fr;
+
+    .header {
+        grid-column: span 2;
+    }
+}
+
+.sidebar {
+    background-color: $color-primary-lighter;
+}

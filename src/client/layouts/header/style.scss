@@ -1,0 +1,23 @@
+@import '~sass';
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: $navbar-height;
+    z-index: $z-index-navbar;
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav_link {
+    color: $color-white;
+    &:not(:last-child) {
+        margin-right: $spacing-xs;
+    }
+    &:hover,
+    :visited {
+        color: $color-white;
+    }
+}

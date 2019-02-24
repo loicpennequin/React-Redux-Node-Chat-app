@@ -1,0 +1,53 @@
+@import '~sass';
+@import '~mixin';
+
+.form-control {
+    margin-bottom: $spacing-sm;
+}
+
+.label {
+    display: block;
+    font-size: $text-sm;
+    margin-bottom: $spacing-xxs;
+}
+
+.text-input_wrapper {
+    position: relative;
+    display: block;
+    @include before() {
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $color-gray-4;
+    }
+    @include after() {
+        bottom: 0;
+        width: 0;
+        left: 50%;
+        height: 1px;
+        background-color: $color-primary-light;
+        transition: all 0.3s;
+    }
+    // &:hover {
+    //     @include after() {
+    //         height: 2px;
+    //         background-color: $color-gray-3;
+    //     }
+    // }
+    &.focused {
+        @include after() {
+            width: 100%;
+            left: 0;
+            height: 2px;
+        }
+    }
+}
+
+.text-input {
+    display: block;
+    border: none;
+    width: 100%
+    &:focus {
+        outline: none;
+    }
+}

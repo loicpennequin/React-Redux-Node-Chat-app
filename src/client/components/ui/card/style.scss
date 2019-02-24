@@ -1,0 +1,13 @@
+@import '~sass';
+
+.card {
+    background-color: $color-white;
+    box-shadow: $box-shadow-1;
+    overflow: hidden;
+}
+
+.card-header {
+    border-bottom: solid 1px $color-gray-4;
+}
+
+@value borderRadius: #{$border-radius-1};
