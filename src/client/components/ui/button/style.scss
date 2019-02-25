@@ -9,6 +9,9 @@
     font-weight: bold;
     box-shadow: $box-shadow-1;
     transition: background-color 0.15s, box-shadow 0.3s;
+    &.disabled{
+        opacity: 0.5;
+    }
 }
 
 .button {

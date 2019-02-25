@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import { RegisterForm } from 'components/forms';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
@@ -12,6 +13,9 @@ import './style.scss';
 const HomeLayout = ({ success, fetching, error }) => {
     const [formDisplayed, setFormDisplayed] = useState(false);
 
+    if (formDisplayed === true === true && success){
+        setFormDisplayed(false);
+    }
     const toggleForm = () => setFormDisplayed(!formDisplayed);
 
     return (
@@ -40,6 +44,7 @@ const HomeLayout = ({ success, fetching, error }) => {
                     >
                         ➡️ Try it out
                     </Button>
+
                 </Flex>
             </Grid.Item>
             <Grid.Item>
@@ -54,6 +59,24 @@ const HomeLayout = ({ success, fetching, error }) => {
                         styleName={`img ${formDisplayed ? 'blurred' : ''}`}
                         wrapper={React.createFactory('div')}
                     />
+                    <CSSTransition
+                        in={success}
+                        timeout={800}
+                        classNames="register-success"
+                        unmountOnExit
+                        mountOnEnter
+                    >
+                        <Card className="register-success">
+                            <Card.Body>
+                                <Flex flexDirection="column" alignItems="center">
+                                    <div className="text-xxl text-center">✔️</div> Registration successful !
+                                    <Link href="/login">
+                                        <Button color="primary" className="m-top-sm">Login to your account</Button>
+                                    </Link>
+                                </Flex>
+                            </Card.Body>
+                        </Card>
+                    </CSSTransition>
                     <CSSTransition
                         in={formDisplayed}
                         timeout={500}

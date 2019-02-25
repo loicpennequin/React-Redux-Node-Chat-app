@@ -9,9 +9,9 @@ const FormControl = ({ label, type = 'text', ...props }) => {
         default:
             Input = TextInput;
     }
-
+    const styleName=`form-control ${props.disabled ? 'disabled' : ''}`;
     return (
-        <div styleName="form-control">
+        <div styleName={styleName}>
             <label styleName="label">{label}</label>
             <Input type={type} {...props} />
         </div>

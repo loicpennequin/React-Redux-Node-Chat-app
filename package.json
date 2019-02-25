@@ -10,7 +10,8 @@
     "prebuild:db": "node tools/scripts/createDB.js",
     "build:db": "knex migrate:latest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "setup": "node tools/scripts/setup.js"
   },
   "keywords": [],
   "author": "",

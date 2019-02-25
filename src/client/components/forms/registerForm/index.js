@@ -2,51 +2,55 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 
 import { register } from 'actions/registerActions';
-import { Card, Button, FormControl } from 'components/ui';
+import { Card, Button, FormControl, Spinner, Flex } from 'components/ui';
 
 import './style.scss';
 
-const RegisterForm = ({ register, handleSubmit }) => {
+const RegisterForm = ({ register, fetching, handleSubmit }) => {
     return (
         <Card rounded>
             <Card.Header className="bg-primary text-lg">Sign up !</Card.Header>
             <Card.Body>
-                <form onSubmit={handleSubmit(register)}>
+                <form onSubmit={handleSubmit(register)} disabled={fetching}>
                     <Field
                         name="username"
-                        component={props => (
-                            <FormControl {...props} label="Username" />
-                        )}
+                        type="text"
+                        label="Username"
+                        disabled={fetching}
+                        component={FormControl}
                     />
                     <Field
                         name="password"
-                        component={props => (
-                            <FormControl
-                                {...props}
-                                type="password"
-                                label="Password"
-                            />
-                        )}
+                        type="password"
+                        label="Password"
+                        disabled={fetching}
+                        component={FormControl}
                     />
                     <Field
                         name="email"
-                        component={props => (
-                            <FormControl
-                                {...props}
-                                type="email"
-                                label="Email"
-                            />
-                        )}
+                        type="email"
+                        label="E-mail"
+                        disabled={fetching}
+                        component={FormControl}
                     />
 
-                    <Button type="submit" color="primary" className="m-top-sm">
-                        Submit
-                    </Button>
+                    <Flex alignItems="center" className="m-top-sm">
+                        <Button type="submit" color="primary" disabled={fetching}>
+                            Submit
+                        </Button>
+                        {fetching && <Spinner />}
+                    </Flex>
                 </form>
             </Card.Body>
         </Card>
     );
 };
+
+function mapstate(state){
+    return {
+        fetching: state.register.registering
+    }
+}
 
 function mapDispatch(dispatch) {
     return {
@@ -56,7 +60,7 @@ function mapDispatch(dispatch) {
 
 export default reduxForm({ form: 'register' })(
     connect(
-        null,
+        mapstate,
         mapDispatch
     )(RegisterForm)
 );

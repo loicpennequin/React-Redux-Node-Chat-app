@@ -56,12 +56,32 @@
         transform: rotateX(0);
     }
     &-exit {
-        transition: all 0.5s;
         transform: none;
         opacity: 1;
     }
     &-exit-active {
         opacity: 0;
         transform: translateX(50%);
+    }
+}
+:global(.register-success) {
+    z-index: 2;
+    transition: all 0.8s;
+    position: absolute;
+    &-enter {
+        opacity: 0;
+        transform: scale(0.25);
+    }
+    &-enter-active {
+        opacity: 1;
+        transform: scale(1);
+    }
+    &-exit {
+        transform: none;
+        opacity: 1;
+    }
+    &-exit-active {
+        opacity: 0;
+        transform: scale(0);
     }
 }

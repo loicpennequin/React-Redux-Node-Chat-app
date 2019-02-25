@@ -6,13 +6,15 @@ const Button = ({
     children,
     color = 'white',
     outlined = false,
-    className,
+    disabled,
+    className = '',
     ...props
 }) => {
     const baseClass = `button-${color}${outlined ? '--outlined' : ''}`;
+    const otherClasses = `${disabled ? 'disabled' : ''} `;
 
     return (
-        <button {...props} className={className + ` ${css[baseClass]}`}>
+        <button {...props} styleName={otherClasses} className={className + ` ${css[baseClass]}`}>
             {children}
         </button>
     );
