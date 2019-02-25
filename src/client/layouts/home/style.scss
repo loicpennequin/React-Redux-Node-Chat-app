@@ -17,6 +17,8 @@
     background-blend-mode: color-dodge, overlay, normal;
 }
 .intro {
+    position: relative;
+    z-index: 2;
     max-width: 500px;
     color: $color-white;
     font-size: $text-md;
@@ -41,6 +43,13 @@
     position: relative;
     height: 100%;
     perspective: 500px;
+}
+.sketch {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    user-select: none;
 }
 :global(.register-form) {
     transition: all 0.5s;

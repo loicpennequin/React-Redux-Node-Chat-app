@@ -3,23 +3,30 @@ import Link from 'next/link';
 import { RegisterForm } from 'components/forms';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
+import { BrowserView } from 'react-device-detect';
 
 import SVG from 'react-inlinesvg';
 import { Flex, Grid, Card, Button } from 'components/ui';
 import img from './../../assets/home-img.svg';
 
+import { Sketch, HomeSketch } from 'components/sketch';
 import './style.scss';
 
 const HomeLayout = ({ success, fetching, error }) => {
     const [formDisplayed, setFormDisplayed] = useState(false);
 
-    if (formDisplayed === true === true && success){
+    if ((formDisplayed === true) === true && success) {
         setFormDisplayed(false);
     }
     const toggleForm = () => setFormDisplayed(!formDisplayed);
 
     return (
         <Grid cols="2" className="height100" styleName="background">
+            <BrowserView>
+                <div styleName="sketch">
+                    <Sketch sketch={HomeSketch} />
+                </div>
+            </BrowserView>
             <Grid.Item>
                 <Flex
                     tag="section"
@@ -44,7 +51,6 @@ const HomeLayout = ({ success, fetching, error }) => {
                     >
                         ➡️ Try it out
                     </Button>
-
                 </Flex>
             </Grid.Item>
             <Grid.Item>
@@ -68,10 +74,21 @@ const HomeLayout = ({ success, fetching, error }) => {
                     >
                         <Card className="register-success">
                             <Card.Body>
-                                <Flex flexDirection="column" alignItems="center">
-                                    <div className="text-xxl text-center">✔️</div> Registration successful !
+                                <Flex
+                                    flexDirection="column"
+                                    alignItems="center"
+                                >
+                                    <div className="text-xxl text-center">
+                                        ✔️
+                                    </div>{' '}
+                                    Registration successful !
                                     <Link href="/login">
-                                        <Button color="primary" className="m-top-sm">Login to your account</Button>
+                                        <Button
+                                            color="primary"
+                                            className="m-top-sm"
+                                        >
+                                            Login to your account
+                                        </Button>
                                     </Link>
                                 </Flex>
                             </Card.Body>
