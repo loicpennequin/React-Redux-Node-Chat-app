@@ -16,20 +16,15 @@ const _fetch = (url, options, req) =>
                     : paths.BASE_API_URL + url;
 
                 const _options = {
-                    headers: {},
-                    ...options,
-                    credentials: 'same-origin'
+                    headers: Object.assign({}, {cookie: req && req.headers.cookie}),
+                    ...options
                 };
-
-                if (req) {
-                    _options.headers.cookie = req.headers.cookie;
-                }
 
                 const response = await fetch(_url, _options);
                 clearTimeout(timeout);
 
                 if (!response.ok) {
-                    reject(new Error(response.statusText));
+                    reject(await response.json());
                 }
                 resolve(await response.json());
             } catch (err) {

@@ -19,8 +19,8 @@ export const login = body => async dispatch => {
         method: 'post',
         actionKey: 'LOGIN',
         successCallback: async (dispatch, getstate, payload) => {
-            await dispatch(getSelf());
             Router.push('/dashboard');
+            await dispatch(getSelf());
             return payload;
         }
     })(dispatch);

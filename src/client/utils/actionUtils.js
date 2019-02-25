@@ -20,7 +20,7 @@ export default {
                     : payload
             });
         } catch (error) {
-            console.log(error);
+            console.error(error);
             dispatch({ type: `${actionKey}_ERROR`, error });
         }
     }

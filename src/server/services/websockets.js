@@ -41,7 +41,6 @@ module.exports.start = server => {
                     break;
                 }
             }
-            console.log(sockets);
             logger.debug(
                 chalk.magentaBright(
                     `socket disconnected, socketId : ${

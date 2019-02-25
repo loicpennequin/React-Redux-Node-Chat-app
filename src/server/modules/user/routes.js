@@ -3,8 +3,13 @@ const AuthService = require('./../auth/service.js');
 
 module.exports = router => {
     router.post('/user', async (req, res) => {
-        const user = await UserService.createUser(req.body);
-        res.json(user);
+        try{
+            const user = await UserService.createUser(req.body);
+            res.json(user);
+        } catch(error){
+            logger.error(error);
+            res.status(500).json({error});
+        }
     });
 
     router.get(
