@@ -9,7 +9,7 @@ import SVG from 'react-inlinesvg';
 import { Flex, Grid, Card, Button } from 'components/ui';
 import img from './../../assets/home-img.svg';
 
-import { Sketch, HomeSketch } from 'components/sketch';
+import { Sketch, HomeSketch, tree } from 'components/sketch';
 import './style.scss';
 
 const HomeLayout = ({ success, fetching, error }) => {
@@ -22,11 +22,11 @@ const HomeLayout = ({ success, fetching, error }) => {
 
     return (
         <Grid cols="2" className="height100" styleName="background">
-            <BrowserView>
-                <div styleName="sketch">
-                    <Sketch sketch={HomeSketch} />
-                </div>
-            </BrowserView>
+            <div styleName="sketch">
+                <BrowserView>
+                    <Sketch sketch={tree} />
+                </BrowserView>
+            </div>
             <Grid.Item>
                 <Flex
                     tag="section"

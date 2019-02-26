@@ -1,3 +1,4 @@
 import Sketch from './sketch.js';
 import HomeSketch from './home';
-export { Sketch, HomeSketch };
+import tree from './tree';
+export { Sketch, HomeSketch, tree };
