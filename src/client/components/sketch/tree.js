@@ -11,7 +11,7 @@ export default function tree(p) {
     const BRANCH_SCALE_RATIO = 0.85;
     const BRANCH_CHILD_ANGLE = 25;
     const MAX_SIZE_INCREMENT = 15;
-    let currentSizeIncrement = 3;
+    let currentSizeIncrement = 0.1;
 
     const createBranch = (start, end, maxSize = BRANCH_MAX_SIZE) => ({
         start,
@@ -21,6 +21,7 @@ export default function tree(p) {
         update() {
             if (this.size < maxSize) {
                 this.size += currentSizeIncrement;
+                if (this.size > maxSize) this.size = maxSize;
             } else if (this.children.length <= 0 && maxSize > BRANCH_MIN_SIZE) {
                 this.spawn(BRANCH_CHILD_ANGLE);
                 this.spawn(-BRANCH_CHILD_ANGLE);
@@ -88,5 +89,8 @@ export default function tree(p) {
         p.translate(0, p.height);
         p.rotate(30);
         tree.root.render();
+        if (currentSizeIncrement <= MAX_SIZE_INCREMENT) {
+            currentSizeIncrement *= 1.05;
+        }
     };
 }
